@@ -9,6 +9,13 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -16,10 +23,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation project(':lib_common')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    if (isModule.toBoolean()) {
+        implementation project(':lib_common')
+    } else {
+        implementation project(':module_girls')
+        implementation project(':module_news')
+    }
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
 }

@@ -2,6 +2,7 @@ package com.magicalrice.adolph.lib_common.base;
 
 import android.app.Application;
 
+import com.magicalrice.adolph.lib_common.utils.AppUtils;
 import com.magicalrice.adolph.lib_common.utils.ClassUtils;
 
 import java.util.List;
@@ -15,9 +16,7 @@ import java.util.List;
  */
 
 public class BaseApplication extends Application {
-    public static final String ROOT_PACKAGE = "com.magicalrice.module";
     private static BaseApplication sInstance;
-    private List<ApplicationDelegate> mAppDelegateList;
 
     public static BaseApplication getsInstance() {
         return sInstance;
@@ -27,6 +26,6 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-//        mAppDelegateList = ClassUtils.getObjectsWithInterface(sInstance,)
+        AppUtils.init(this);
     }
 }

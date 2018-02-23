@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="java.util.List"/>
+        <import type="com.magicalrice.adolph.lib_common.datamodel.User"/>
+        
+        <variable
+            name="userList"
+            type="List&lt;User&gt;"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AboutFragment"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="userList.get(0).userName"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="userList.get(1).userName"/>
+
+        <Button
+            android:id="@+id/btn_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Change User Name"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+    </LinearLayout>
+</layout>

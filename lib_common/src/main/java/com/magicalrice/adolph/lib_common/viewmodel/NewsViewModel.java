@@ -83,8 +83,8 @@ public class NewsViewModel extends AndroidViewModel {
      * 当主动改变数据时重新设置被观察的数据
      * @param uiObservableData
      */
-    public void setUiObservableData(ObservableField<BaseBean<NewsData>> uiObservableData) {
-        this.uiObservableData = uiObservableData;
+    public void setUiObservableData(BaseBean<NewsData> uiObservableData) {
+        this.uiObservableData.set(uiObservableData);
     }
 
     @Override

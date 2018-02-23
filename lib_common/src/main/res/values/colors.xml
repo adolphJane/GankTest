@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--APP的主题色-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--APP公用的一些颜色-->
+    <color name="comment_light_background">#d6d6d6</color>
+    <color name="comment_news_bg">#569948</color>
 </resources>

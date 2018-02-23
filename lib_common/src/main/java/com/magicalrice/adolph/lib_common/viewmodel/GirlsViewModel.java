@@ -36,7 +36,6 @@ public class GirlsViewModel extends AndroidViewModel {
 
     public GirlsViewModel(@NonNull Application application) {
         super(application);
-
         liveObservableData = Transformations.switchMap(NetUtils.netConnected(application), input -> {
             if (!input) {
                 return ABSENT;  //网络未连接返回空
@@ -82,8 +81,8 @@ public class GirlsViewModel extends AndroidViewModel {
      * 当主动改变数据时重新设置被观察的数据
      * @param uiObservableData
      */
-    public void setUiObservableData(ObservableField<BaseBean<GirlsData>> uiObservableData) {
-        this.uiObservableData = uiObservableData;
+    public void setUiObservableData(BaseBean<GirlsData> uiObservableData) {
+        this.uiObservableData.set(uiObservableData);
     }
 
     @Override

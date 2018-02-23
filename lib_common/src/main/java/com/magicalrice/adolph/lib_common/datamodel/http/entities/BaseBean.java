@@ -1,6 +1,7 @@
 package com.magicalrice.adolph.lib_common.datamodel.http.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Adolph on 2018/2/14.
@@ -8,7 +9,7 @@ import java.io.Serializable;
 
 public class BaseBean<T> implements Serializable {
     private boolean error;
-    private T data;
+    private List<T> results;
 
     public boolean isError() {
         return error;
@@ -18,11 +19,11 @@ public class BaseBean<T> implements Serializable {
         this.error = error;
     }
 
-    public T getData() {
-        return data;
+    public List<T> getResults() {
+        return results;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setResults(List<T> results) {
+        this.results = results;
     }
 }

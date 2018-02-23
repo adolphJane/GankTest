@@ -78,6 +78,7 @@ public class NetUtils {
                     for (NetworkInfo info : infos) {
                         if (info != null && info.isConnected()) {
                             if (info.getState() == NetworkInfo.State.CONNECTED) {
+                                isNetConnect.setValue(true);
                                 return isNetConnect;
                             }
                         }
@@ -87,6 +88,7 @@ public class NetUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        isNetConnect.setValue(false);
         return isNetConnect;
     }
 }

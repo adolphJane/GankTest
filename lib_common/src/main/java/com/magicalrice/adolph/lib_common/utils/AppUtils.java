@@ -28,7 +28,7 @@ public class AppUtils {
      * @param context
      */
     public static void init(Context context) {
-        context = context.getApplicationContext();
+        AppUtils.context = context.getApplicationContext();
     }
     /**
      * 全局获取Activity的工具

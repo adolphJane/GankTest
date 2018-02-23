@@ -81,8 +81,8 @@ public class BaseViewModel<T> extends AndroidViewModel{
      * 当主动改变数据时重新设置被观察的数据
      * @param uiObservableData
      */
-    public void setUiObservableData(ObservableField<T> uiObservableData) {
-        this.uiObservableData = uiObservableData;
+    public void setUiObservableData(T uiObservableData) {
+        this.uiObservableData.set(uiObservableData);
     }
 
     @Override

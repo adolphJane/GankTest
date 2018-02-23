@@ -9,9 +9,19 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
 
+    lintOptions {
+        abortOnError false
     }
 
     dataBinding {
@@ -32,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     //test
     testApi rootProject.ext.dependencies.junit
@@ -67,6 +77,7 @@ dependencies {
     api "com.orhanobut:logger:$rootProject.loggerVersion"
     //router
     api "com.alibaba:arouter-api:$rootProject.arouterVersion"
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
     //LeakCanary
     debugApi "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
     releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakcanaryVersion"
