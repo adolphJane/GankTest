@@ -28,8 +28,10 @@
             android:background="@color/cardview_light_background">
             <Button
                 android:id="@+id/toGirls"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:padding="10dp"
                 android:textAllCaps="false"
                 android:onClick="@{()->itemClick.onClick(@id/toGirls)}"
@@ -38,9 +40,10 @@
 
             <Button
                 android:id="@+id/toNews"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:padding="10dp"
                 android:textAllCaps="false"
                 android:onClick="@{()->itemClick.onClick(@id/toNews)}"
@@ -49,9 +52,10 @@
 
             <Button
                 android:id="@+id/toDynamic"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:padding="10dp"
                 android:textAllCaps="false"
                 android:onClick="@{()->itemClick.onClick(@id/toDynamic)}"
